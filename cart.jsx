@@ -115,7 +115,7 @@ const Products = (props) => {
   let list = items.map((item, index) => {
     // let n = index + 1049;
     // let url = "https://picsum.photos/id/" + n + "/50/50";
-
+    if (item.instock >0) {
     return (
       <li key={index}>
         <Image src={photos[index % 4]} width={70} roundedCircle></Image>
@@ -125,6 +125,7 @@ const Products = (props) => {
         <input name={item.name} type="submit" onClick={addToCart}></input>
       </li>
     );
+    }
   });
   let cartList = cart.map((item, index) => {
     return (
